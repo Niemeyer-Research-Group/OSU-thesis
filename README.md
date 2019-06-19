@@ -30,6 +30,11 @@ Beyond that, add content to the existing chapter or replace with other chapters 
 The `%!TEX root = thesis.tex` bit at the top of the files tells most LaTeX editors to automatically
 compile the main document, even when you are working on an individual subfile.
 
+The references are contained in `refs.bib`, though this can be replaced with a different file by
+changing the `\addbibresource{}` command in `thesis-header.tex`. You can also use multiple BibTeX
+files by adding additional `\addbibresource{}` commands. Note that `biber` and `biblatex` are
+used to process references in this template, rather than the older `bibtex`.
+
 In the chapters, you can include a quotation that appears right before the chapter title using
 the `\epigraphhead{}` command, following the example in the Introduction chapter.
 
