@@ -1,0 +1,78 @@
+% !BIB TS-program = biber
+\documentclass[onehalf,11pt]{beavtex/beavtex}
+
+\input{thesis-header.tex}
+
+% things to check or replace
+% replace your name here.
+\newcommand{\TheAuthors}{YOUR NAME}
+\title{THESIS TITLE}
+\degree{Doctor of Philosophy}
+\major{Mechanical Engineering}
+
+\submitdate{June 13, 2018}
+\commencementyear{2019}
+
+\author{\TheAuthors{}}
+\doctype{Thesis}
+\department{Mechanical, Industrial, and Manufacturing Engineering}
+\depttype{School}
+\depthead{Head}
+
+\advisor{Kyle E.~Niemeyer}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% figure location
+\graphicspath{{./figures/}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\abstract
+{
+(ABSTRACT GOES HERE)
+}
+
+
+\acknowledgements{
+\textit{here you might thank the people that helped you, and possibly a funding source}
+}
+
+
+\dedication{(optional dedication)}
+
+% REPLACE OR REMOVE THIS PREFACE QUOTE
+\preface{
+    \epigraph{
+        Research is what I'm doing when I don't know what I'm doing.
+    }
+    {Wernher von Braun}
+}
+
+\begin{document}
+
+\maketitle
+
+\mainmatter
+
+% By including `''%!TEX root = thesis.tex` in the top of each included file,
+% most LaTeX editors will automatically compile the main package when you are working
+% within a file.
+
+\include{introduction}
+\include{litreview}
+\include{methods}
+\include{results}
+\include{conclusions}
+
+\newpage
+
+\printbibliography[]
+
+
+%% INCLUDE IF YOU NEED AN APPENDIX
+
+% \newpage
+%\appendix
+%\input{appendixA.tex}
+
+\end{document}

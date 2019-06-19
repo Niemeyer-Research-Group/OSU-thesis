@@ -1,0 +1,76 @@
+
+\documentclass[onehalf,11pt]{beavtex}
+\title{The Meaning of Life}
+\author{John Smith}
+\degree{Doctor of Philosophy}
+\doctype{Dissertation}
+\department{Electrical Engineering and Computer Science}
+\depttype{School}
+\depthead{Director}
+\major{Computer Science}
+\advisor{Joan Smythe}
+\submitdate{September 23, 2011}
+\commencementyear{2012}
+\abstract{This is an abstract statement.}
+\acknowledgements{I would like to acknowledge the Starting State and the Transition Function.}
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\begin{document}
+\maketitle
+
+\mainmatter
+
+\chapter{Introduction}
+I have done some excellent research \cite{matrix}.
+\section{Introduction to the Introduction}
+\begin{figure}[!ht]
+\centering
+\fbox{\huge Box}
+\caption{Go figure.}
+\end{figure}
+
+\phantom{}\newpage
+\phantom{}\vfill
+\begin{center}
+\heading
+The Body
+\end{center}
+\vfill
+John Smith, Henry Gray
+\vfill\noindent
+Journal of Anatomy\\
+New York, NY\\
+Vol. 1, 100--200
+\vfill
+
+\chapter{The Body}
+This is the meat.
+\section{Meat}
+We're born meat and we die meat. Meanwhile, we learn (see Algorithm \ref{alg:learning}).
+
+\begin{algorithm}[h]
+\caption{\textsc{Learning}}
+\label{alg:learning}
+\begin{algorithmic}[1]
+\ENSURE{Optimal policy $\mathcal{C}$}
+	\STATE $\mathcal{C} \gets 42$
+	\RETURN $\mathcal{C}$
+\end{algorithmic}
+\end{algorithm}
+
+\chapter{Conclusion}
+Wow, that really was excellent.
+\section{Fin}
+This is the end, my only friend, the end.
+
+
+\bibliographystyle{plain}
+\bibliography{thesis}
+
+\appendix
+\chapter{Redundancy}
+This appendix is inoperable.
+
+\end{document}

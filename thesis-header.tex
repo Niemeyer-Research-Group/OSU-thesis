@@ -1,0 +1,155 @@
+% this file contains the LaTeX preamble and loads all necessary packages
+% you shouldn't need to edit this
+
+% better printing of numbers
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage{textcomp}
+
+\usepackage{lmodern}
+
+% used to provide "lorem ipsum" placeholder text
+\usepackage{blindtext}
+
+% used to put quotes at the beginning of a chapter
+\usepackage{epigraph}
+\renewcommand{\epigraphsize}{\footnotesize}
+
+%\usepackage{subfiles}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage{xspace}
+\microtypecontext{spacing=nonfrench}
+
+\usepackage{latexsym, amsmath, amssymb, amsfonts}
+\usepackage{graphicx, color, xcolor, wrapfig, subcaption}
+
+\usepackage[hyphens]{url}
+\usepackage[breaklinks=true, linkcolor=blue, citecolor=blue, colorlinks=true]{hyperref}
+\newcommand*{\doi}[1]{\href{https://doi.org/#1}{\nolinkurl{https://doi.org/#1}}}
+
+\usepackage[backend=biber,
+            hyperref=true,
+            autolang=hyphen,
+            style=phys,
+            biblabel=brackets,
+            citestyle=numeric-comp,
+            sorting=none,
+            bibencoding=UTF-8,
+            giveninits=true,
+            maxbibnames=100,
+            maxcitenames=3,
+            terseinits=true,
+            citetracker=true,
+            doi=true,
+            articletitle=true,
+]{biblatex}
+
+\addbibresource{refs.bib}
+
+\setcounter{biburlnumpenalty}{1000}  % allow breaks at numbers
+\setcounter{biburlucpenalty}{1000}   % allow breaks at uppercase letters
+\setcounter{biburllcpenalty}{1000}   % allow breaks at lowercase letters
+% remove "in: " from articles
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{}{%
+  \printtext{\bibstring{in}\intitlepunct}}
+}
+% do not include language
+\AtEveryBibitem{%
+  \clearlist{language}%
+}
+
+\newcommand{\pathprefix}{.}
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{booktabs, multicol, multirow}
+
+\usepackage{listings}
+
+\usepackage{nicefrac}
+\usepackage{bm}
+
+\usepackage[version=4]{mhchem}
+
+\usepackage[binary-units]{siunitx}
+\sisetup{group-separator={,},
+	detect-all,
+	binary-units,
+	list-units = single,
+	range-units = single,
+	range-phrase = --,
+	per-mode = symbol-or-fraction,
+	separate-uncertainty = true,
+	multi-part-units = single,
+	list-final-separator = {, and }
+%    scientific-notation = fixed
+}
+\DeclareSIUnit\atm{atm}
+
+\newcommand{ \ddt } [1] { \frac{ \partial #1 }{ \partial t } }
+\newcommand{ \ddx } [1] { \frac{ \partial }{ \partial #1 } }
+\newcommand{ \dydx } [2] { \frac{ \partial #1 }{ \partial #2 } }
+\newcommand{ \ddydxx } [2] { \frac{ \partial^2 #1 }{ \partial #2^2 } }
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  language=C,
+  breaklines=true,
+  columns=flexible,
+  basicstyle=\tiny \ttfamily,
+  backgroundcolor=\color{white},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  frame=single,
+  tabsize=2,
+  captionpos=b,
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+}
+
+% C++ macro
+\def\CC{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\footnotesize ++}}}
+
+\usepackage{amsopn}
+\DeclareMathOperator{\diag}{diag}
+% Define commands to assure consistent treatment throughout document
+\newcommand{\eqnref}[1]{(\ref{#1})}
+\newcommand{\class}[1]{\texttt{#1}}
+\newcommand{\package}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{#1}}
+\newcommand{\BibTeX}{\textsc{Bib}\TeX}
+
+% Need to get rid of additions
+\usepackage[normalem]{ulem}
+% *** Be very precise and careful about including whitespace and punctuation in your edits ***\
+% For the version with changes, use these four commands
+
+\usepackage{amsfonts}
+\usepackage{epstopdf}
+\ifpdf
+  \DeclareGraphicsExtensions{.eps,.pdf,.png,.jpg}
+\else
+  \DeclareGraphicsExtensions{.eps}
+\fi
+
+\newcommand{\PaperHeader}[3]{
+    %\phantom{}\newpage
+    \phantom{}\vfill
+    \begin{center}
+    \heading
+    #1
+    \end{center}
+    \vfill
+    #2
+    \vfill\noindent
+    #3
+    \vfill
+}
